@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watch Video</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: Arial;
+    }
+
+    .container {
+      position: relative;
+      width: 90%;
+      max-width: 500px;
+      cursor: pointer;
+    }
+
+    .thumb {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .play-button:after {
+      content: "";
+      display: inline-block;
+      border-style: solid;
+      border-width: 15px 0 15px 25px;
+      border-color: transparent transparent transparent white;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container" onclick="goAffiliate()">
+    <img class="thumb" src="https://i.imgur.com/cadCBLI.png" alt="video thumbnail">
+    <div class="play-button"></div>
+  </div>
+
+  <script>
+    function goAffiliate() {
+      window.location.href = "https://s.shopee.co.id/1gFmHtnOoz";
+    }
+  </script>
+
+</body>
+</html>
