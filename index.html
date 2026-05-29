@@ -1,69 +1,145 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Watch Video</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Luxury Landing</title>
 
   <style>
-    body {
-      margin: 0;
-      background: #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
     }
 
-    .container {
-      position: relative;
-      width: 90%;
-      max-width: 500px;
-      cursor: pointer;
+    body{
+      height:100vh;
+      overflow:hidden;
+      background:#000;
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
 
-    .thumb {
-      width: 100%;
-      border-radius: 12px;
+    .wrapper{
+      position:relative;
+      width:100%;
+      height:100vh;
+      overflow:hidden;
     }
 
-    .play-button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      background: rgba(0,0,0,0.6);
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .wrapper img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      filter:brightness(0.75);
     }
 
-    .play-button:after {
-      content: "";
-      display: inline-block;
-      border-style: solid;
-      border-width: 15px 0 15px 25px;
-      border-color: transparent transparent transparent white;
-      margin-left: 5px;
+    .overlay{
+      position:absolute;
+      inset:0;
+      background:
+      linear-gradient(
+        to top,
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.15)
+      );
+      display:flex;
+      justify-content:center;
+      align-items:center;
     }
+
+    .glass{
+      width:130px;
+      height:130px;
+      border-radius:50%;
+      backdrop-filter:blur(12px);
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.15);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      cursor:pointer;
+      transition:0.35s ease;
+      box-shadow:
+      0 0 40px rgba(255,255,255,0.08),
+      inset 0 0 20px rgba(255,255,255,0.06);
+    }
+
+    .glass:hover{
+      transform:scale(1.08);
+      background:rgba(255,255,255,0.12);
+    }
+
+    .play{
+      width:0;
+      height:0;
+      border-top:24px solid transparent;
+      border-bottom:24px solid transparent;
+      border-left:38px solid #fff;
+      margin-left:8px;
+    }
+
+    .shine{
+      position:absolute;
+      width:400px;
+      height:400px;
+      background:radial-gradient(
+        circle,
+        rgba(255,255,255,0.18),
+        transparent 70%
+      );
+      filter:blur(40px);
+      animation:float 5s ease-in-out infinite;
+    }
+
+    @keyframes float{
+      0%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-20px);
+      }
+      100%{
+        transform:translateY(0px);
+      }
+    }
+
   </style>
-</head>
 
+</head>
 <body>
 
-  <div class="container" onclick="goAffiliate()">
-    <img class="thumb" src="https://i.imgur.com/rwNzkRE.jpeg" alt="video thumbnail">
-    <div class="play-button"></div>
+  <div class="wrapper">
+
+    <!-- GANTI FOTO -->
+    <img src="https://i.imgur.com/dnDbI0a.png">
+
+    <div class="overlay">
+
+      <div class="shine"></div>
+
+      <div class="glass" onclick="goAffiliate()">
+        <div class="play"></div>
+      </div>
+
+    </div>
+
   </div>
 
   <script>
-    function goAffiliate() {
-      window.location.href = "https://s.shopee.co.id/1gFmHtnOoz";
+
+    function goAffiliate(){
+
+      // GANTI LINK AFFILIATE DISINI
+      window.location.href =
+      "https://s.shopee.co.id/W3rIAYGa1";
+
     }
+
   </script>
 
 </body>
